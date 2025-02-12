@@ -31,7 +31,7 @@ int main(){
 //------------------Primeira Carta------------------
 //Estados 
         printf("Insira a Inicial do Primeiro Estado.\n");
-        scanf("%c", &estado1);
+        scanf("%s", &estado1);
     
 //Nome da Cidade
         printf("Insira o Nome da Cidade. (sem espaço) \n");
@@ -57,9 +57,9 @@ int main(){
         printf("Numero de Habitantes.\n");
         scanf("%lu", &populacao1);
     
-        densidade_populacional1 = area2 / (float)populacao1;
-        pib_per_capita1 = pib1 / (float)populacao1;
-        super_poder1 = area1 + (float)pontos_turisticos1 + densidade_populacional1 + pib_per_capita1;
+        densidade_populacional1 = area1 / populacao1;
+        pib_per_capita1 = pib1 / populacao1;
+        super_poder1 = pontos_turisticos1 + area1 + populacao1 + pib_per_capita1;
 
 //Exibir os dados da Carta
         printf("---------Status Primeira Carta---------\n");
@@ -71,7 +71,7 @@ int main(){
         printf("Densidade Populacional: %0.2f pessoas/km²\n", densidade_populacional1);
         printf("PIB: %0.2f bilhões de reais\n", pib1);
         printf("PIB per capita: %0.2f reais\n",  pib_per_capita1);
-        printf("SUPERRR POWERRRR!!!!!: %d\n", super_poder1);
+        printf("SUPERRR POWERRRR!!!!!: %.2f\n", super_poder1);
         printf("-----------------------------------\n");
 
 //------------------Segunda Carga------------------
@@ -106,9 +106,9 @@ int main(){
         printf("Numero de Habitantes.\n");
         scanf("%lu", &populacao2);
         
-        densidade_populacional2 = area2 / (float)populacao2;
-        pib_per_capita2 = pib2 / (float)populacao2;
-        super_poder2 = area2 + (float)pontos_turisticos2 + densidade_populacional2 + pib_per_capita2;
+        densidade_populacional2 = area2 / populacao2;
+        pib_per_capita2 = pib2 / populacao2;
+        super_poder2 = pontos_turisticos2 + area2 + populacao2 + pib_per_capita2;
         
 
 //Exibir os dados da Carta
@@ -121,16 +121,16 @@ int main(){
         printf("Densidade Populacional: %0.2f pessoas/km²\n", densidade_populacional2);
         printf("PIB: %0.2f bilhões de reais\n", pib2);
         printf("PIB per capita: %0.2f reais\n",  pib_per_capita2);
-        printf("SUPERRR POWERRRR!!!!!: %d\n", super_poder2);
+        printf("SUPERRR POWERRRR!!!!!: %.2f\n", super_poder2);
         printf("-----------------------------------\n");
 
 // Jogo
-        print("Escolha o Atributo para Duelar!");
-        printf("1 - Área.");
-        printf("2 - População.");
-        printf("3 - Densidade Populacional.");
-        printf("4 - PIB per Capita.");
-        printf("5 - Super Poder.");
+        printf("Escolha o Atributo para Duelar!\n");
+        printf("1 - Área.\n");
+        printf("2 - População.\n");
+        printf("3 - Densidade Populacional.\n");
+        printf("4 - PIB per Capita.\n");
+        printf("5 - Super Poder.\n");
         scanf("%d", &escolha_atributo);
 
         switch (escolha_atributo)
@@ -140,9 +140,9 @@ int main(){
             if(area1 == area2){
                 printf("Empate na Área!\n");
             } else if (area1 > area2){
-                printf("Com a Maior Área: %c0%d\n", estado1, cod_carta1);
+                printf("O Ganhador com a Maior Área: %c0%d\n", estado1, cod_carta1);
             } else{
-                printf("Com a Maior Área: %c0%d\n", estado2, cod_carta2);
+                printf("O Ganhador com a Maior Área: %c0%d\n", estado2, cod_carta2);
             }
             break;
 
@@ -151,9 +151,9 @@ int main(){
             if(populacao1 == populacao2){
                 printf("Empate na População!\n");
             } else if(populacao1 > populacao2){
-                printf("Com a Maior População: %c0%d\n", estado1, cod_carta1);
+                printf("O Ganhador com a Maior População: %c0%d\n", estado1, cod_carta1);
             } else {
-                printf("Com a Maior População: %c0%d\n", estado2, cod_carta2);
+                printf("O Ganhador com a Maior População: %c0%d\n", estado2, cod_carta2);
             }
             break;
 
@@ -161,8 +161,8 @@ int main(){
         case 3:
             if(densidade_populacional1 == densidade_populacional2){
                 printf("Empate nesse Densidade Populacional!\n");
-            } else if(densidade_populacional1 > densidade_populacional2){
-                printf("Com a Maior Densidade Populacional: %c0%d\n", estado1, cod_carta1);
+            } else if(densidade_populacional1 < densidade_populacional2){
+                printf("O Ganhador com a Menor Densidade Populacional é: %c0%d\n", estado1, cod_carta1);
             } else {
                 printf("Com a Maior Densidade Populacional: %c0%d\n", estado2, cod_carta2);
             }
@@ -173,9 +173,9 @@ int main(){
             if(pib_per_capita1 == pib_per_capita2){
                 printf("Empate no PIB per Capita!\n");
             } else if(pib_per_capita1 > pib_per_capita2){
-                printf("Com o Maior PIB per Capita: %c0%d\n", estado1, cod_carta1);
+                printf("O Ganhador com a Maior PIB per Capita: %c0%d\n", estado1, cod_carta1);
             } else {
-                printf("Com o Maior PIB per Capita: %c0%d\n", estado2, cod_carta2);
+                printf("O Ganhador com a Maior PIB per Capita: %c0%d\n", estado2, cod_carta2);
             }
             break;
 
